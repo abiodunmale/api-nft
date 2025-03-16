@@ -11,6 +11,6 @@ app.use(cors());
 
 app.use('/nft', nftRouter);
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 5000, function() {
     console.log("Server running on port 3000");
 })

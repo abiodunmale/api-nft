@@ -83,6 +83,7 @@ export const about = async (req, res) => {
 
 export const generateNft = async (req, res) => {
 
+
     const { nftID, Arm_Ring, Background, Body, Body_Piece, Bracer, Eyes, Headpiece, Necklace, Rune, Tattoos  } = req.body;
 
     if (!nftID || !Arm_Ring || !Background || !Body || !Body_Piece || !Bracer || !Eyes || !Headpiece || !Necklace || !Rune || !Tattoos) {
@@ -129,7 +130,7 @@ export const generateNft = async (req, res) => {
 
     const headerOption = {
         headers: {
-            AccessKey: 'd8d207f1-d49f-4c1b-a2a006cef862-3bd7-4c16',
+            AccessKey: '911c877d-6f91-4a20-a1448cec7cca-6a41-48d5',
             'content-type': 'application/octet-stream'
         }
     };
@@ -140,7 +141,7 @@ export const generateNft = async (req, res) => {
         body: blankCanvas.toBuffer('image/png')
     };
 
-    const resultImage = await fetch(`https://storage.bunnycdn.com/nft-art/${nftID}.png`, optionsImage);
+    const resultImage = await fetch(`https://storage.bunnycdn.com/nft-artt/${nftID}.png`, optionsImage);
     if(resultImage.status >= 400){
         return res.status(404).send('Bad response from server, image');
     }
@@ -148,7 +149,7 @@ export const generateNft = async (req, res) => {
     let metadata = JSON.stringify({
         name: `${projectName} #${nftID}`,
         description: projectDescription,
-        image: `https://a-sick-story.b-cdn.net/${nftID}.png`,
+        image: `https://a-sick-storyy.b-cdn.net/${nftID}.png`,
         //external_url: projectURL,
         attributes: ctx.attributes,
     }, null, 2)
@@ -160,7 +161,7 @@ export const generateNft = async (req, res) => {
         body: metadata
     };
       
-    const resultMetadata = await fetch(`https://storage.bunnycdn.com/nft-art/metadata/${nftID}.json`, optionsMetadata);
+    const resultMetadata = await fetch(`https://storage.bunnycdn.com/nft-artt/metadata/${nftID}.json`, optionsMetadata);
     if(resultMetadata.status >= 400){
         return res.status(404).send('Bad response from server, metadata');
     }
@@ -210,7 +211,7 @@ export const getNftMetadata = async (req, res) => {
     // res.json(fileContents);
 
     // try {
-        const result = await fetch(`https://a-sick-story.b-cdn.net/metadata/${tokenId}.json`);
+        const result = await fetch(`https://a-sick-storyy.b-cdn.net/metadata/${tokenId}.json`);
     
         if (result.status >= 400) {
             return res.status(404).send('Bad response from server');
